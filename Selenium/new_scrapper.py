@@ -9,7 +9,7 @@ driver = webdriver.Chrome("./chromedriver_linux64/chromedriver")
 
 df = pd.DataFrame(columns=["Title","Location","Company","Salary","Sponsored","Description"])
 
-for i in range(0,200,10):
+for i in range(0,50,10):
 	driver.get('https://www.indeed.com.pk/jobs?q=software+engineer&l=Islamabad&start=0'+str(i))
 	jobs = []
 	driver.implicitly_wait(4)
@@ -62,4 +62,4 @@ for i in range(0,200,10):
 		print("Got these many results:",df.shape)
 
 
-df.to_csv("IT_jobs_Islamabad.csv",index=False)
+df.to_csv("new_file.csv",index=False)
